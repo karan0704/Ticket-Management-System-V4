@@ -1,0 +1,17 @@
+<!-- ticket-details.component.html -->
+
+<div *ngIf="ticket">
+    <h2>Ticket Details</h2>
+    <p><strong>Ticket ID:</strong> {{ ticket.id }}</p>
+    <p><strong>Customer Name:</strong> {{ ticket.customerName }}</p>
+    <p><strong>Title:</strong> {{ ticket.ticketTitle }}</p>
+    <p><strong>Issue:</strong> {{ ticket.ticketIssue }}</p>
+    <p><strong>Status:</strong> {{ ticket.ticketStatus ? 'Open' : 'Closed' }}</p>
+    <button (click)="updateStatus(!ticket.ticketStatus)">{{ ticket.ticketStatus ? 'Close' : 'Open' }} Ticket</button>
+    <button (click)="deleteTicket()">Delete Ticket</button>
+  </div>
+  
+  <div *ngIf="!ticket">
+    <p>Ticket not found.</p>
+  </div>
+  

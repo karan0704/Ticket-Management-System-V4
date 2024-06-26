@@ -1,0 +1,18 @@
+<!-- src/app/components/create-ticket/create-ticket.component.html -->
+<h2>Create New Ticket</h2>
+
+<form (submit)="createTicket()">
+  <div>
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" [(ngModel)]="newTicket.customerName" name="customerName" required>
+  </div>
+  <div>
+    <label for="ticketTitle">Ticket Title:</label>
+    <input type="text" id="ticketTitle" [(ngModel)]="newTicket.ticketTitle" name="ticketTitle" required>
+  </div>
+  <div>
+    <label for="ticketIssue">Ticket Issue:</label>
+    <textarea id="ticketIssue" [(ngModel)]="newTicket.ticketIssue" name="ticketIssue" required></textarea>
+  </div>
+  <button type="submit">Create Ticket</button>
+</form>
