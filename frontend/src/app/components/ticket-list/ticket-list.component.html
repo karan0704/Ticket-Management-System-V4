@@ -1,20 +1,34 @@
-<h2>Ticket List</h2>
 
-<div *ngFor="let ticket of tickets">
-  <div>
-    <span><strong>Ticket ID:</strong> {{ ticket.id }}</span><br>
-    <span><strong>Customer Name:</strong> {{ ticket.customerName }}</span><br>
-    <span><strong>Ticket Title:</strong> {{ ticket.ticketTitle }}</span><br>
-    <span><strong>Six Digit Ticket Number:</strong> {{ ticket.sixDigitTicketNumber }}</span><br>
-    <span><strong>Ticket Status:</strong> {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</span><br>
-    <button (click)="deleteTicket(ticket.id)">Delete</button>
-    <button (click)="changeTicketStatus(ticket.id, !ticket.ticketStatus)">Change Status</button>
+<!-- Search and Sort Section -->
+<div class="controls">
+  <div class="search-bar">
+    <input class="search-input" type="number" placeholder="Search by Ticket ID" [(ngModel)]="searchTerm" (input)="searchTickets()">
+  </div>
+  <div class="sort-buttons">
+    <button class="sort-button" (click)="sortByCustomerName()">Sort by Customer Name</button>
+    <button class="sort-button" (click)="sortByTicketTitle()">Sort by Ticket Title</button>
   </div>
 </div>
 
-<!-- <div>
-  <a routerLink="/create-ticket">Create New Ticket</a>
-</div> -->
-<!-- <div>
-  <button (click)="navigateToCreateTicket()">Create New Ticket</button>
-</div> -->
+<!-- Ticket List -->
+<div *ngIf="tickets.length > 0">
+  <div class="ticket-container">
+    <div *ngFor="let ticket of tickets" class="ticket-card">
+      <div class="ticket-content">
+        <span class="ticket-id"><strong>Ticket ID:</strong> {{ ticket.id }}</span><br>
+        <span><strong>Customer Name:</strong> {{ ticket.customerName }}</span><br>
+        <span><strong>Ticket Title:</strong> {{ ticket.ticketTitle }}</span><br>
+        <span><strong>Six Digit Ticket Number:</strong> {{ ticket.sixDigitTicketNumber }}</span><br>
+        <span><strong>Ticket Status:</strong> {{ ticket.ticketStatus ? 'Closed' : 'Open' }}</span><br>
+        <div class="ticket-actions">
+          <button class="ticket-action-button" (click)="deleteTicket(ticket.id)">Delete</button>
+          <button class="ticket-action-button ticket-action-change-status" (click)="changeTicketStatus(ticket.id, !ticket.ticketStatus)">Change Status</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="tickets.length === 0" class="no-tickets-found">
+  <p>No tickets found.</p>
+</div>

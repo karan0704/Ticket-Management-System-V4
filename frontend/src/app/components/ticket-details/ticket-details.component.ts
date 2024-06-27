@@ -13,7 +13,7 @@ export class TicketDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,  // Ensure Router is injected here
+    private router: Router,
     private ticketService: TicketService
   ) {}
 

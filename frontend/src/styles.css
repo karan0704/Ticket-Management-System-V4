@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+    color: #333; /* Default text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #343a40; /* Dark primary color for header */
+    color: #fff; /* Text color for header */
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #007bff; /* Primary color for navigation */
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff; /* Navigation link color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #0056b3; /* Darker primary color on hover */
+  }
+  
+  /* Main content area styles */
+  main {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff; /* Content background color */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  /* Button styles */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #28a745; /* Success color */
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #218838; /* Darker success color on hover */
+  }
+  
+  .btn-secondary {
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #0056b3; /* Darker primary color on hover */
+  }
+  
+  .btn-danger {
+    background-color: #dc3545; /* Danger color */
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333; /* Darker danger color on hover */
+  }
+  
+  /* Ticket list styles */
+  .ticket-list {
+    background-color: #f8f9fa; /* Ticket list background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ticket-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .ticket-item {
+    width: calc(50% - 20px); /* Two tickets per row with space between */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+    transition: background-color 0.3s ease;
+  }
+  
+  .ticket-item:hover {
+    background-color: #f0f0f0; /* Light background color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .ticket-item {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  .ticket-details {
+    padding: 10px;
+  }
+  
+  .no-tickets {
+    text-align: center;
+    margin-top: 10px;
+    color: #999;
+  }
+  
+  .button-group {
+    margin-top: 10px; /* Adjust spacing between buttons */
+  }
+  
+  .button-group button {
+    margin-right: 10px; /* Adjust spacing between buttons horizontally */
+  }
+  

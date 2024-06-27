@@ -1,14 +1,24 @@
 <!-- app.component.html -->
 
-<div style="text-align: center;">
+<header>
   <h1>Welcome to Ticket Management System</h1>
-  <router-outlet></router-outlet> <!-- Placeholder for routing components -->
+</header>
+<!--Header with navigation buttons -->
+<div class="header">
+
+  <nav class="navbar">
+
+    <ul class="nav-list">
+
+      <li class="nav-item"><a class="nav-link" routerLink="/tickets">Tickets</a></li>
+
+      <li class="nav-item"><a class="nav-link" routerLink="/create-ticket">Create Ticket</a></li>
+
+    </ul>
+
+  </nav>
+
 </div>
-<nav>
-  <ul>
-    <li><a routerLink="/tickets">Tickets</a></li>
-    <li><a routerLink="/create-ticket">Create Ticket</a></li>
-   
-  </ul>
-</nav>
+
+<!-- Placeholder for routing components -->
 <router-outlet></router-outlet>
