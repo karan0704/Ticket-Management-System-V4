@@ -1,5 +1,5 @@
 export interface Ticket {
-    id: number; // Adjust property name as per your backend
+    id: number; 
     customerName: string;
     ticketTitle: string;
     ticketIssue: string;

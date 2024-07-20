@@ -11,8 +11,7 @@ public class TicketSystemV4Application {
 	public static void main(String[] args) {
 		SpringApplication.run(TicketSystemV4Application.class, args);
 		
-		TicketEntity ticketEntity =  new TicketEntity();
-		System.out.println(ticketEntity);
+
 	}
 
 }
