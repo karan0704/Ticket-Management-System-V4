@@ -57,6 +57,7 @@ import { Ticket } from 'src/app/models/ticket';
 export class TicketService {
 
   private baseUrl = 'http://localhost:8080/api/tickets';
+  private loginUrl = 'http://localhost:8080/api/auth/login';
 
   constructor(private http: HttpClient) { }
 
@@ -88,4 +89,7 @@ export class TicketService {
   getAllTicketsSortedByTicketTitle(): Observable<Ticket[]> {
     return this.http.get<Ticket[]>(`${this.baseUrl}/tickets/sortedByTicketTitle`);
   }
+  login(credentials: any): Observable<any> {
+    return this.http.post(this.loginUrl, credentials);
+}
 }

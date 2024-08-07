@@ -8,13 +8,15 @@ import { TicketListComponent } from './components/ticket-list/ticket-list.compon
 import { TicketDetailsComponent } from './components/ticket-details/ticket-details.component';
 import { CreateTicketComponent } from './components/create-ticket/create-ticket.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketListComponent,
     TicketDetailsComponent,
-    CreateTicketComponent
+    CreateTicketComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
