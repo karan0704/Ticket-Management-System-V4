@@ -1,23 +1,47 @@
 <!-- ticket-details.component.html -->
 
-  <section class="ticket-details">
-    <div *ngIf="ticket">
-      <h2>Ticket Details</h2>
-      <div class="detail-item">
-        <p><strong>Ticket ID:</strong> {{ ticket.id }}</p>
-        <p><strong>Customer Name:</strong> {{ ticket.customerName }}</p>
-        <p><strong>Title:</strong> {{ ticket.ticketTitle }}</p>
-        <p><strong>Issue:</strong> {{ ticket.ticketIssue }}</p>
-        <p><strong>Status:</strong> {{ ticket.ticketStatus ? 'Open' : 'Closed' }}</p>
-        <button (click)="updateStatus(!ticket.ticketStatus)" class="btn btn-secondary">
-          {{ ticket.ticketStatus ? 'Close' : 'Open' }} Ticket
-        </button>
-        <button (click)="deleteTicket()" class="btn btn-danger">Delete Ticket</button>
-      </div>
+<section class="ticket-details-container">
+  <div *ngIf="ticket" class="ticket-details">
+    <h2>Ticket Details</h2>
+    <div class="detail-item">
+      <p><strong>Ticket ID:</strong> {{ ticket.id }}</p>
+      <p><strong>Customer Name:</strong> {{ ticket.customerName }}</p>
+      <p><strong>Title:</strong> {{ ticket.ticketTitle }}</p>
+      <p><strong>Issue:</strong> {{ ticket.ticketIssue }}</p>
+      <p><strong>Status:</strong> {{ ticket.ticketStatus ? 'Open' : 'Closed' }}</p>
+
+      <button (click)="updateStatus(!ticket.ticketStatus)" class="btn btn-secondary">
+        {{ ticket.ticketStatus ? 'Close' : 'Open' }} Ticket
+      </button>
+      <button (click)="deleteTicket()" class="btn btn-danger">Delete Ticket</button>
     </div>
-  
-    <div *ngIf="!ticket" class="no-ticket">
-      <p>Ticket not found.</p>
+  </div>
+
+  <div *ngIf="!ticket" class="no-ticket">
+    <p>Ticket not found.</p>
+  </div>
+ </section>
+
+
+<!--<section class="ticket-details-container">
+  <h2>Ticket Details</h2>
+
+  <div *ngIf="ticket; else noTicketTemplate">
+    <div class="detail-item">
+      <p><strong>Customer Name:</strong> {{ ticket.customerName }}</p>
+      <p><strong>Ticket Title:</strong> {{ ticket.ticketTitle }}</p>
+      <p><strong>Ticket Issue:</strong> {{ ticket.ticketIssue }}</p>
+      <p><strong>6-Digit Ticket Number:</strong> {{ ticket.sixDigitTicketNumber }}</p>
+      <p><strong>Status:</strong> {{ ticket.ticketStatus ? 'Resolved' : 'Open' }}</p>
     </div>
-  </section>
+
+    <button class="btn btn-secondary" (click)="goBack()">Back</button>
+    <button class="btn btn-danger" (click)="deleteTicket(ticket.id)">Delete Ticket</button>
+  </div>
+
+  <ng-template #noTicketTemplate>
+    <p class="no-ticket">No ticket details available.</p>
+  </ng-template>
+</section> -->
+
   

@@ -1,22 +1,21 @@
 <!-- src/app/components/create-ticket/create-ticket.component.html -->
 
-
-<section class="create-ticket">
+<section class="create-ticket-container">
   <h2>Create New Ticket</h2>
 
   <form (submit)="createTicket()" class="ticket-form">
     <div class="form-group">
       <label for="customerName">Customer Name:</label>
-      <input type="text" id="customerName" [(ngModel)]="newTicket.customerName" name="customerName" required>
+      <input type="text" id="customerName" [(ngModel)]="newTicket.customerName" name="customerName" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="ticketTitle">Ticket Title:</label>
-      <input type="text" id="ticketTitle" [(ngModel)]="newTicket.ticketTitle" name="ticketTitle" required>
+      <input type="text" id="ticketTitle" [(ngModel)]="newTicket.ticketTitle" name="ticketTitle" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="ticketIssue">Ticket Issue:</label>
-      <textarea id="ticketIssue" [(ngModel)]="newTicket.ticketIssue" name="ticketIssue" rows="4" required></textarea>
+      <textarea id="ticketIssue" [(ngModel)]="newTicket.ticketIssue" name="ticketIssue" class="form-control" rows="4" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Create Ticket</button>
+    <button type="submit" class="btn-submit">Create Ticket</button>
   </form>
 </section>

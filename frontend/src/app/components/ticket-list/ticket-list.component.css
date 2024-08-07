@@ -1,65 +1,14 @@
-/* Header */
-.header {
-  position: sticky;
-  top: 0;
-  background-color: #007bff;
-  padding: 10px;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Ticket list */
+.ticket-list-title {
   text-align: center;
-}
-
-.header-title {
-  color: white;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  font-size: 24px;
-  margin: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-}
-
-.nav-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  list-style: none;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-link:hover {
-  background-color: #0056b3;
-  color: #cce5ff;
-}
-
-/* Controls Section */
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .search-input {
@@ -71,7 +20,9 @@
 
 .sort-buttons {
   display: flex;
+  justify-content: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .sort-button {
@@ -88,7 +39,6 @@
   background-color: #0056b3;
 }
 
-/* Ticket Container */
 .ticket-container {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +58,7 @@
 
 .ticket-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   background-color: #f0f8ff;
 }
 
@@ -122,7 +72,6 @@
   color: #007bff;
 }
 
-/* Ticket Actions */
 .ticket-actions {
   display: flex;
   justify-content: space-between;
