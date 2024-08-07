@@ -2,10 +2,8 @@ package com.example.ticketapp.model;
 
 import com.example.ticketapp.util.RandomSixDigitNumberGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class TicketEntity {
@@ -17,23 +15,31 @@ public class TicketEntity {
     private String customerName; //User Input
     private int sixDigitTicketNumber;
     private String ticketTitle; //User Input
-    private String ticketIssue; //User Input
-    private boolean ticketStatus; // Updated field: true for open, false for closed
+    private String ticketDescription; //User Input
+    private Date preferredDAte;
+
+    @ManyToOne
+    private CustomerEntity customerEntity;
+
+
+
+    @Enumerated(EnumType.STRING)
+    private TicketStatus ticketStatus;
 
     public TicketEntity() {
-        // Default constructor required by JPA
+        // Default constructor
     }
 
     //Parameterized Constructor
-    public TicketEntity(String customerName, String ticketTitle, String ticketIssue, boolean ticketStatus) {
+    public TicketEntity(String customerName, String ticketTitle, String ticketDescription, TicketStatus ticketStatus) {
         this.customerName = customerName;
         this.ticketTitle = ticketTitle;
-        this.ticketIssue = ticketIssue;
+        this.ticketDescription = ticketDescription;
         this.ticketStatus = ticketStatus;
         this.sixDigitTicketNumber = RandomSixDigitNumberGenerator.generateUniqueNumber();
     }
 
-    // Getters and setters (omitted for brevity)
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -67,19 +73,19 @@ public class TicketEntity {
         this.ticketTitle = ticketTitle;
     }
 
-    public String getTicketIssue() {
-        return ticketIssue;
+    public String getTicketDescription() {
+        return ticketDescription;
     }
 
-    public void setTicketIssue(String ticketIssue) {
-        this.ticketIssue = ticketIssue;
+    public void setTicketDescription(String ticketDescription) {
+        this.ticketDescription = ticketDescription;
     }
 
-    public boolean isTicketStatus() {
+    public TicketStatus isTicketStatus() {
         return ticketStatus;
     }
 
-    public void setTicketStatus(boolean ticketStatus) {
+    public void setTicketStatus(TicketStatus ticketStatus) {
         this.ticketStatus = ticketStatus;
     }
 
@@ -91,7 +97,7 @@ public class TicketEntity {
                 ", customerName='" + customerName + '\'' +
                 ", sixDigitTicketNumber=" + sixDigitTicketNumber +
                 ", ticketTitle='" + ticketTitle + '\'' +
-                ", ticketIssue='" + ticketIssue + '\'' +
+                ", ticketDescription='" + ticketDescription + '\'' +
                 ", ticketStatus=" + ticketStatus +
                 '}';
     }
