@@ -6,12 +6,10 @@ import javax.persistence.Entity;
 public class ServiceEngineerEntity extends UserEntity {
     private String expertise;
 
-    // Getters and setters
-
+    // Getters and setters-------------------------------
     public String getExpertise() {
         return expertise;
     }
-
     public void setExpertise(String expertise) {
         this.expertise = expertise;
     }

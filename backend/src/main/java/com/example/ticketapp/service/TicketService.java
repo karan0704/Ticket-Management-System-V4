@@ -7,7 +7,7 @@ import java.util.List;
 public interface TicketService {
 
     TicketEntity createTicket(TicketEntity ticket);
-    
+
     List<TicketEntity> getAllTickets();
     
 
@@ -17,7 +17,7 @@ public interface TicketService {
 
     TicketEntity getTicketById(Long id);
 
-    TicketEntity updateTicketStatus(Long id, boolean newStatus);
+    TicketEntity updateTicketStatus(Long id, TicketStatus newStatus);
 
     void deleteTicket(Long id);
 }

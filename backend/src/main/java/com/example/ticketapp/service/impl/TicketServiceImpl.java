@@ -1,7 +1,9 @@
-package com.example.ticketapp.service;
+package com.example.ticketapp.service.impl;
 
 import com.example.ticketapp.model.TicketEntity;
+import com.example.ticketapp.model.TicketStatus;
 import com.example.ticketapp.repository.TicketRepository;
+import com.example.ticketapp.service.TicketService;
 import com.example.ticketapp.util.RandomSixDigitNumberGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,7 +51,7 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public TicketEntity updateTicketStatus(Long id, boolean newStatus) {
+    public TicketEntity updateTicketStatus(Long id, TicketStatus newStatus) {
         Optional<TicketEntity> ticketOptional = ticketRepository.findById(id);
         if (ticketOptional.isPresent()) {
             TicketEntity ticket = ticketOptional.get();

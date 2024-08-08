@@ -1,7 +1,8 @@
 package com.example.ticketapp.controller;
 
 import com.example.ticketapp.model.TicketEntity;
-import com.example.ticketapp.service.TicketService;
+import com.example.ticketapp.model.TicketStatus;
+import com.example.ticketapp.service.impl.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -56,7 +57,7 @@ public class TicketController {
 	}
 
 	@PutMapping("/{id}/updateStatus")
-	public ResponseEntity<TicketEntity> updateTicketStatus(@PathVariable Long id, @RequestParam String newStatus) {
+	public ResponseEntity<TicketEntity> updateTicketStatus(@PathVariable Long id, @RequestParam TicketStatus newStatus) {
 		boolean status = Boolean.parseBoolean(newStatus);
 		TicketEntity updatedTicket = ticketService.updateTicketStatus(id, status);
 		if (updatedTicket != null) {
