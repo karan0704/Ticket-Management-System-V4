@@ -65,10 +65,6 @@ public class TicketController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	/*
-	 * @PutMapping("/{id}/updateStatus") public ResponseEntity<TicketEntity>
-	 * updateTicketStatus(@PathVariable Long id, @RequestParam boolean newStatus)
-	 */
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
@@ -77,10 +73,3 @@ public class TicketController {
 	}
 
 }
-
-/*
- * @GetMapping public ResponseEntity<List<TicketEntity>> getAllTickets() {
- * List<TicketEntity> tickets =
- * ticketService.getAllTicketsSortedByTicketTitle(); return new
- * ResponseEntity<>(tickets, HttpStatus.OK); }
- */

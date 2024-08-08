@@ -12,13 +12,6 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
-        boolean isAuthenticated = authService.authenticate(loginRequest);
-        if (isAuthenticated) {
-            return ResponseEntity.ok().body(Map.of("success", true));
-        } else {
-            return ResponseEntity.status(401).body(Map.of("success", false, "message", "Invalid credentials"));
-        }
-    }
+
+
 }
