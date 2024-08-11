@@ -1,10 +1,16 @@
 package com.example.ticketapp.model;
 
 import com.example.ticketapp.util.RandomSixDigitNumberGenerator;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Getter
+@Setter
+@ToString
 @Entity
 public class TicketEntity {
 
@@ -21,8 +27,6 @@ public class TicketEntity {
     @ManyToOne
     private CustomerEntity customerEntity;
 
-
-
     @Enumerated(EnumType.STRING)
     private TicketStatus ticketStatus;
 
@@ -38,70 +42,4 @@ public class TicketEntity {
         this.ticketStatus = ticketStatus;
         this.sixDigitTicketNumber = RandomSixDigitNumberGenerator.generateUniqueNumber();
     }
-
-    // Getters and setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public int getSixDigitTicketNumber() {
-        return sixDigitTicketNumber;
-    }
-
-    public void setSixDigitTicketNumber(int sixDigitTicketNumber) {
-        this.sixDigitTicketNumber = sixDigitTicketNumber;
-    }
-
-    public String getTicketTitle() {
-        return ticketTitle;
-    }
-
-    public void setTicketTitle(String ticketTitle) {
-        this.ticketTitle = ticketTitle;
-    }
-
-    public String getTicketDescription() {
-        return ticketDescription;
-    }
-
-    public void setTicketDescription(String ticketDescription) {
-        this.ticketDescription = ticketDescription;
-    }
-
-    public TicketStatus isTicketStatus() {
-        return ticketStatus;
-    }
-
-    public void setTicketStatus(TicketStatus ticketStatus) {
-        this.ticketStatus = ticketStatus;
-    }
-
-    //ToString Method
-    @Override
-    public String toString() {
-        return "TicketEntity{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", sixDigitTicketNumber=" + sixDigitTicketNumber +
-                ", ticketTitle='" + ticketTitle + '\'' +
-                ", ticketDescription='" + ticketDescription + '\'' +
-                ", ticketStatus=" + ticketStatus +
-                '}';
-    }
-    
-    
-    
 }

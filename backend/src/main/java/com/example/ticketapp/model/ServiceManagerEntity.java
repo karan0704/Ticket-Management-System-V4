@@ -1,17 +1,12 @@
 package com.example.ticketapp.model;
 
-import javax.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.Entity;
+@Setter
+@Getter
 @Entity
 public class ServiceManagerEntity extends UserEntity {
     private String departmentName;
-
-    // Getters and setters
-    public String getDepartmentName() {
-        return departmentName;
-    }
-
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
-    }
 }
