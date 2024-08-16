@@ -1,6 +1,7 @@
 package com.example.ticketapp.service;
 
 import com.example.ticketapp.model.TicketEntity;
+import com.example.ticketapp.model.TicketStatus;
 
 import java.util.List;
 

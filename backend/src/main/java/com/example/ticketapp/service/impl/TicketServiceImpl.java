@@ -53,12 +53,13 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public TicketEntity updateTicketStatus(Long id, TicketStatus newStatus) {
         Optional<TicketEntity> ticketOptional = ticketRepository.findById(id);
-        if (ticketOptional.isPresent()) {
-            TicketEntity ticket = ticketOptional.get();
-            ticket.setTicketStatus(newStatus);
-            return ticketRepository.save(ticket);
+        if(!ticketOptional.isPresent()) {
+            return null;
         }
-        return null;
+        TicketEntity ticket = ticketOptional.get();
+        ticket.setTicketStatus(newStatus);
+        return ticketRepository.save(ticket);
+
     }
 
     @Override
